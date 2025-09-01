@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Latihan Javascript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        p br {
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Apa itu Framework dan Library dalam JavaScript?</h1>
+    <button onclick="sayHello()">Lihat Nama</button>
+    <p>Library: sekumpulan fungsi/kode siap pakai yang bisa kita gunakan sesuai kebutuhan.</p>
+    <p>Framework: kerangka kerja yang sudah menentukan struktur dan aturan dalam membuat aplikasi.</p>
+    <h2>Contoh Library JavaScript</h2>
+    <p>1. jQuery<br>Populer dulu untuk mempermudah manipulasi DOM & AJAX.<br>Contoh: <code>$("#id").hide();</code> (lebih singkat dibanding JavaScript murni).</p>
+    <p>2. Lodash<br>Membantu manipulasi data (array, object, dll) dengan mudah.<br>Contoh: <code>_.cloneDeep(obj);</code></p>
+    <p>3. Chart.js / D3.js<br>Khusus untuk membuat grafik/chart interaktif.</p>
+
+    <script>
+       function sayHello() {
+            alert("NAMA : Fadhal Aryan Jagadditha");
+       }
+    </script>
+</body>
+</html>
