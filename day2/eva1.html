@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Studi Kasus</h1>
+    <script>
+    const Nama = "Dryan Arfidra";
+    let umur = 20;
+    let Status = "Pelajar";
+
+    console.log("Hallo, nama saya " + Nama + ". Umur saya " + umur + " tahun. Status saya adalah " + Status + ".");
+
+    let buah = ["apel", "pisang", "jeruk", "mangga"];
+    console.table(buah);
+
+    let nama = prompt("Masukkan nama anda");
+
+    if (!nama) {
+        console.error("Nama tidak boleh kosong!");
+    } else {
+        alert("Hallo " + nama + ", nice to meet you!");
+    }
+
+    const inginHapus = confirm("Apakah Anda ingin menghapus data?");
+    if (inginHapus) {
+        console.log("Data berhasil dihapus.");
+    } else {
+        console.log("Data tidak dihapus.");
+    }
+</script>
+
+</body>
+</html>
