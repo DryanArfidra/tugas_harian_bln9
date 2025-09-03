@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Menentukan apakah angka ganjil atau genap
+         const angka = 11
+         console.log(angka % 2)
+
+        if ((angka % 2) === 0){
+            console.log("genap")
+        }else {
+            console.log("ganjil")
+        }
+        // Menentukan apakah seseorang boleh masuk bioskop (usia > 17).
+        const umur = 30
+        const uang = 50000
+
+        if (umur <= 17 || uang < 35000){
+            console.log("tidak diperbolehkan masuk")
+        }else if (umur <= 20 && uang >= 35000){
+            console.log("diperbolehkan masuk bioskop")
+        }else if (umur <= 30 && uang >= 50000){
+            console.log("masuk bioskop lewat pintu VIP")
+        }else {
+            console.log("umur terlalu tua")
+        }
+        // Menentukan apakah suhu termasuk dingin, normal, atau panas
+        const suhu = 20
+
+        if (suhu <= 0){
+            console.log("cuaca extreme dingin")
+        }else if (suhu > 0){
+            console,log("cuaca normal")
+        }else if (suhu > 40){
+            console.log("cuaca panas")
+        }else {
+            console.log("tidak terdekteksi")
+        }
+        // Mengecek login dengan username dan password
+        const user = "Dryan"
+        const password = 313
+
+        if (user === "Dryan" && password === 313){
+            console.log("anda berhasil login")
+        }else {
+            console.log("ulangi password anda salah")
+        }
+
+        // Mengecek apakah nilai ujian lulus atau tidak.
+        let nilai = prompt("Masukkan nilai ujian Anda:");
+        
+        nilai = Number(nilai);
+        if (nilai >= 70) {
+            console.log("Selamat! Anda LULUS.");
+        alert("Selamat! Anda LULUS.");
+        } else {
+            console.log("Maaf, Anda TIDAK LULUS.");
+        alert("Maaf, Anda TIDAK LULUS.");
+        }
+
+
+        
+
+    </script>
+</body>
+</html>

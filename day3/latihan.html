@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.Buat program yang memeriksa apakah usia termasuk kategori anak-anak, remaja ,atau dewasa
+        let umur = 12
+
+        if (umur <= 12) {
+            console.log("anak-anak");
+        }else if (umur <= 18){
+            console.log("remaja");
+        }else {
+            console.log("dewasa")
+        }
+
+        // 2.Gunakan `for` loop untuk mencetak angka 1 sampai 10.
+        for (let i =1; i <=10; i++) {
+            console.log("nomer ke-"+i);
+        }
+        // 3. Buat `switch` statement untuk menampilkan nama hari dari angka (1-7)
+        let hari = 1;
+
+        switch (hari) {
+            case 1:
+                console.log("senin");
+                break;
+            case 2:
+                console.log("selasa");
+                break;
+            case 3:
+                console.log("rabu");
+                break;
+            case 4:
+                console.log("kamis");
+                break;
+            case 5:
+                console.log("jum'at");
+                break;
+            case 6:
+                console.log("sabtu");
+                break;
+            case 7:
+                console.log("minggu");
+                break;
+            default:
+                console.log("tidak ada hari lain")
+        }
+
+    </script>
+</body>
+</html>
