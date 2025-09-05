@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // fungsi menyapa user
+        function sapa(nama) {
+            console.log("woi "+nama+', nice to meet you');
+        }
+        sapa("Dryan");
+
+        // berfungsi untuk mengitung luas persegi
+        function luasPersegi(sisi) {
+            let luas = sisi * sisi;
+            console.log("luas persegi dengan sisi "+sisi+" adalah "+luas);
+        }
+        luasPersegi(5);
+        // berfungsi untuk menampilkan biodata 
+        function tampilkanBiodata(nama, umur, status) {
+            console.log("Nama   : " + nama);
+            console.log("Umur   : " + umur);
+            console.log("Status : " + status);
+        }
+
+        tampilkanBiodata("Aryan Arfidra", 20, "Pelajar");
+        // berfungsi untuk memeriksa bilangan ganjil/genap
+        function ganjilGenap(angka) {
+            if (angka % 2 === 0) {
+                console.log(angka + " adalah bilangan genap");
+            }else {
+                console.log(angka + " adalah bilangan ganjil");
+            }
+        }
+        ganjilGenap(7);
+        // berfungsi untuk menu cetak daftar
+        function menuMakanan () {
+            console.log("=== Menu Pilihan ===");
+            console.log("1. Lihat profil");
+            console.log("2. Lihat nilai");
+            console.log("3. Keluar");
+        }
+        menuMakanan()
+
+    </script>
+</body>
+</html>

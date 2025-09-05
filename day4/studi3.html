@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // fungsi mengurangi angka
+        let pengurangan = (a, b) => a - b;
+        console.log(pengurangan(7, 2));
+
+        // fungsi menghitung pajak.
+        let hitungPajak = (harga, persen) => harga * persen / 100;
+        console.log("pajak: "+hitungPajak(200000, 10));
+
+        // funsi menampilkan salam 
+        let salam = (nama) => "hallo "+nama+" selamat datang!";
+        console.log(salam("Dryan"));
+
+        // fungsi menghitung umur dari tahun lahir 
+        let hitungUmur = (tahunLahir) => new Date().getFullYear() - tahunLahir;
+        console.log("Umur kamu: " + hitungUmur(2005) + " tahun");
+
+        // fungsi mengkonversi suhu celcius ke fahrenheit
+        let celciusToFahrenheit = (c) => (c * 9/5) + 32;
+        console.log("Suhu dalam Fahrenheit: " + celciusToFahrenheit(30));
+
+    </script>
+</body>
+</html>

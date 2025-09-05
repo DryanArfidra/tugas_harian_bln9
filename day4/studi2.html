@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Fungsi hitung luas segitiga.
+        let luasSegitiga = function(alas, tinggi){
+            return 0.5 * alas * tinggi;
+        };
+        console.log("luas segitiga: "+luasSegitiga(7, 5));
+
+        // Fungsi menghitung keliling lingkaran.
+        let hitungKelilingLingkaran = function(r) {
+            const a = 3.14;
+            return 2 * a * r;
+        };
+        console.log("Keliling Lingkaran: " + hitungKelilingLingkaran(5));
+
+        // Fungsi menambahkan dua angka.
+        let tambah = function(a, b) {
+            return a + b;
+        };
+        console.log("Hasil Penjumlahan: " + tambah(100, 50));
+
+        // Fungsi mengubah huruf menjadi kapital.
+        let ubahKapital = function(teks) {
+            return teks.toUpperCase();
+        };
+        console.log(ubahKapital("anjay dimas mabar"));
+
+        // Fungsi menghitung diskon belanja.
+        let hitungDiskon = function(harga, diskon) {
+            return harga - (harga * diskon / 100);
+        };
+        console.log("Harga setelah diskon: " + hitungDiskon(100000, 20));
+
+    </script>
+</body>
+</html>
