@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function buatCounter() {
+            let saldo = 0; // uang di dalam counter
+
+            function isiCounter(jumlah) {
+                saldo += jumlah; 
+                console.log("Saldo sekarang: " + saldo);
+            }
+
+        return isiCounter;
+        }
+
+        let celenganA = buatCounter();
+        celenganA(5000); // Saldo sekarang: 5000
+        celenganA(2000); // Saldo sekarang: 7000
+        celenganA(2000); // saldo sekarang: 9000
+        
+        // buat fungsi buatTabungan () yang bisa menyimpang uang.
+        function buatTabungan() {
+            let saldo = 0;
+            
+            return {
+                setor: function(jumlah) {
+                    saldo += jumlah;
+                    return `setor Rp${jumlah}, saldo sekarang Rp${saldo}`;
+                },
+                lihat: function() {
+                    return `saldo anda Rp${saldo}`;
+                }
+            };
+        }
+        let tabungan = buatTabungan();
+
+        tabung(15000);
+        tabung(25000);
+        tabung(35000);
+
+        // buat fungsi buatKeranjangBelanja() yang bisa menambahkan barang baru 
+        function buatKeranjangBelanja(){
+            let barang = [];
+
+            return {
+                tambah: function(item) {
+                    barang.push(item);
+                    return `${item} ditambahkan ke keranjang.`;
+                },
+                lihat: function() {
+                    return `isi keranjang: ${barang.join(", ")}`;
+                }
+            };
+        }
+
+        const keranjang = buatKeranjangBelanja();
+
+        console.log(keranjang.tamabah("apel"));
+        console.log(keranjang.tamabah("jeruk"));
+        console.log(keranjang.lihat());
+
+        // Buat fungsi buatTimer() yang menyimpan detik setiap kali dipanggil.
+        function buatTimer() {
+        let detik = 0;
+
+            return function() {
+                detik++;
+                return `Timer: ${detik} detik`;
+            };
+        }
+
+        const timer = buatTimer();
+
+        console.log(timer()); 
+        console.log(timer()); 
+        console.log(timer()); 
+
+        // Buat fungsi buatCatatanNama() yang bisa menambahkan nama siswa ke daftar.
+        function buatCatatanNama() {
+            let daftar = [];
+
+            return {
+                tambah: function(nama) {
+                daftar.push(nama);
+                return `${nama} ditambahkan ke daftar.`;
+                },
+                lihat: function() {
+                return `Daftar siswa: ${daftar.join(", ")}`;
+                }
+            };
+        }
+
+        const catatan = buatCatatanNama();
+
+        console.log(catatan.tambah("Andi")); 
+        console.log(catatan.tambah("Budi")); 
+        console.log(catatan.lihat());        
+
+    </script>
+</body>
+</html>

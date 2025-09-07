@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log(nama); // undefined 
+        var nama = "Budi";
+        console.log(nama); // hasil
+
+        // console.log(umur); // ERROR (let masih dikunci)
+        let umur = 10;
+        console.log(umur);
+
+        // console.log(kota); // ERROR (const masih dikunci)
+        const kota = bandung;
+        console.log(kota);
+        
+        // buat fungsi normal di bawah, lalu panggil di atas
+         sayHello()
+
+        function sayHello () {
+            console.log("jangan panggil aku anak kecil paman!!");
+        }
+       
+        //buat fungsi versi panah (const halo = () => {}), panggil di atas. apa perbedaanya
+        // halo (); // error
+        const halo = () => {
+            console.log("hallo semua");
+        }
+        halo()// hasil
+    </script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Buat variabel nama, umur, statusPelajar. Tampilkan semuanya dengan console.log().
+        const nama = "Dryanz";
+        let umur = 20;
+        let status = "pelajar";
+
+        console.log(`hallo nama saya ${nama} umur saya ${umur} status saya sekarang adalah seorang ${status}`);
+
+        // Buat variabel uangSaku = 50000, jajan = 15000, hitung sisa uangnya.
+        let uangSaku = 50000;
+        let jajan = 15000;
+        let sisaUang = uangSaku - jajan;
+
+        console.log(`isa uang ${sisaUang}`);
+
+        // Buat variabel sudahLogin = true. Cek apakah user sudah login, jika iya tampilkan "Selamat datang".
+        let sudahLogin = true;
+
+        if (!sudahLogin) {
+            console.log("coba login kembali")
+        }else {
+            console.log("selamat datang");
+        };
+
+        //Buat variabel nilai = 75. Jika nilai ≥ 70 tampilkan "Lulus", jika tidak "Tidak Lulus".
+        let nilai = 75;
+
+        if (nilai >= 70) {
+            console.log("Lulus");
+        } else {
+            console.log("Tidak Lulus");
+        }
+
+        // Coba deklarasikan const angka = 10, lalu ubah nilainya. Apa hasilnya?
+        // const angka2 = 10;
+        let angka2 = 20; 
+        console.log(angka2);
+
+        // tidak bisa di ubah nilai nya karena yang bisa di ubah nilainya hanya let
+
+        // buat program cek ganjil/genap dari angka tertentu
+        let angka1= 7;
+
+        if (angka1% 2 === 0) {
+        console.log(angka1+ " adalah Genap");
+        } else {
+        console.log(angka1+ " adalah Ganjil");
+        }
+
+        // buat program yang menampilkan nama bulan sesuai angka (1-12) menggunakan switch
+        let bulan = 1;
+
+        switch (bulan){
+            case 1:
+                console.log("january");
+                break;
+            case 2:
+                console.log("febraury");
+                break;
+            case 3:
+                console.log("maret");
+                break;
+            case 4:
+                console.log("april");
+                break;
+            case 5:
+                console.log("mei");
+                break;
+            case 6:
+                console.log("juni");
+                break;
+            case 7:
+                console.log("juli");
+                break;
+            case 8:
+                console.log("agustus");
+                break;
+            case 9:
+                console.log("september");
+                break;
+            case 10:
+                console.log("oktober");
+                break;
+            case 11:
+                console.log("november");
+                break;
+            case 12:
+                console.log("desenber");
+                break;           
+            default:
+                console.log("tidak ada bulan lain")
+        }
+
+        // Buat program untuk mencetak angka 1 sampai 20 dengan for.
+        for (let a = 1; a <= 20; a++){
+            console.log("ke-"+a);
+        } 
+
+        // Buat program untuk mencetak bilangan kelipatan 5 dari 1–50.
+        for (let b = 5; b <= 50; b++){
+            if (b % 5 === 0);
+            console.log("urutan- "+b);
+        }
+
+        // Buat program yang terus meminta input password hingga benar ( while).
+        let passwordBenar = "12345";
+        let input;
+
+        while (input !== passwordBenar) {
+            input = prompt("Masukkan password:");
+        }
+
+        console.log("Password benar, akses diterima!");
+
+        // Buat fungsi sapa(nama)yang menampilkan "Halo, [nama]!"
+        function sapa(nama1) {
+            console.log("Halo, " + nama1 + "!");
+        }
+
+        sapa("Aryan");
+
+
+        // Buat fungsi hitungLuasSegitiga(alas, tinggi)yang mengembalikan hasilnya.
+        function hitungLuasSegitiga(alas, tinggi){
+            return (alas * tinggi) / 2;
+        }
+        console.log(hitungLuasSegitiga(10, 5));
+
+        // Buat fungsi cekUmur(umur)→ tampilkan "Dewasa"jika ≥ 18, "Anak-anak"jika < 18.
+        function cekUmur(umur) {
+            if (umur >= 18) {
+                console.log("Dewasa");
+            } else {
+                console.log("Anak-anak");
+            }
+        }
+
+        cekUmur(20); 
+        cekUmur(12); 
+
+        // Buat fungsi ekspresi untuk menghitung diskon belanja.
+        const hitungDiskon = function(Belanja, Diskon) {
+            return Belanja - (Belanja * Diskon / 100);
+        };
+
+        console.log(hitungDiskon(1500000, 20)); 
+
+
+        // Buat fungsi panah untuk menghitung konversi suhu Celcius ke Fahrenheit.
+        const konversiSuhu = (celcius) => (celcius * 9/5) + 32;
+
+        console.log(konversiSuhu(0));   
+        console.log(konversiSuhu(100)); 
+
+        // Buat variabel sekolah di global, tampilkan di dalam fungsi.
+        // Variabel global
+        let sekolah = "SMA Negeri 1";
+
+        // Fungsi
+        function tampilkanSekolah() {
+            console.log("Saya sekolah di:", sekolah);
+        }
+
+        tampilkanSekolah(); 
+
+        // Buat variabel guru di dalam fungsi, coba tampilkan di luar fungsi. Apa yang terjadi?
+        function buatGuru() {
+            let guru = "Bu Siti";
+            console.log("Guru di dalam fungsi:", guru);
+        }
+
+        buatGuru();
+
+        console.log(guru); // Error!
+
+        // Coba tampilkan variabel var sebelum dideklarasikan. Apa hasilnya?
+        console.log(namas); // Hasil: undefined
+        var namas = "Arya";
+        console.log(namas); // Hasil: Arya
+
+        // Buat fungsi buatCounter() yang tiap kali dipanggil menambah angka +1 (gunakan closure).
+        function buatCounter() {
+            let hitung = 0;
+            return function() {
+                hitung++;
+                return hitung;
+            };
+        }
+
+        let counter = buatCounter();
+
+        console.log(counter());
+        console.log(counter()); 
+        console.log(counter()); 
+
+        // Buat fungsi pencatatanPengeluaran() yang menyimpan total pengeluaran dengan closure.
+        function pencatatanPengeluaran() {
+            let total = 0;
+            return function(jumlah) {
+                total += jumlah;
+                return `Total pengeluaran saat ini: Rp${total}`;
+            };
+        }
+
+        let catat = pencatatanPengeluaran();
+
+        console.log(catat(50000)); 
+        console.log(catat(25000)); 
+        console.log(catat(10000)); 
+    </script>
+</body>
+</html>

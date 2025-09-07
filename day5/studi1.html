@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Buat variabel namaSekolah di global, lalu tampilkan di dalam fungsi.
+        let namaSekolah = "SD Laboratorium"; //global
+
+        function sekolah() {
+            console.log(`nama sekolah ${namaSekolah}`); // bisa lihat nama SDN
+        }
+        sekolah();
+
+        // buat variabel namaGuru di dalam fumgsi, coba tampilkan 
+      
+
+        function TampilkanNamaGuru() {
+            let namaGuru = "Pak Yamin";
+                console.log(`nama guru bahasa arab : ${namaGuru}` )
+        }
+        TampilkanNamaGuru()
+
+        // buat perulangan for dan let di dalam perulangan (lihat bedanya)
+        for (var a = 1; a <= 3; a++) {
+            console.log("Var a di dalam loop: " + a);
+            }
+            console.log("Var a di luar loop: " + a); // ✅ bisa diakses
+
+        for (let k = 1; k <= 3; k++) {
+            console.log("Let k di dalam loop: " + k);
+            }
+            // console.log(k); // error, tidak bisa diakses di luar
+        
+        // buat dua fungsi berbeda, masing-masing punya variabel namaMahasiswa. apakah mereka saling ganggu
+        function fungsiA() {
+        let namaSiswa = "Dryanz";
+            console.log("Nama siswa : " + namaSiswa);
+        }
+
+        function fungsiB() {
+        let namaSiswa = "Roberto";
+            console.log("Nama siswa : " + namaSiswa);
+        };
+
+        fungsiA();
+        fungsiB();
+    </script>
+</body> 
+</html>
