@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // bikin array isi angka 1-10
+       let angka = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        console.log(angka);
+        // pakai map buat kaliin semua angka dengan 5
+       let kaliLima = angka.map(function(a){
+        return a * 5;
+       });
+       console.log(kaliLima);
+       // pakai filter buat ambil angka genap  
+       let genap = angka.filter(function(b){
+        return b % 2 === 0;
+       });
+       console.log(genap);
+       // pakai reduce buat jumlahin semua angka.
+       let jumlah = angka.reduce(function(total, c){
+        return total + c;
+       });
+       console.log(jumlah);
+       // gunakan find buat cari angka pertaman yang lebih dari 8.
+       let lebihDari = angka.find(function(d){
+        return d > 8;
+       });
+       console.log(lebihDari);
+        // Ada daftar nama buah, terus cetak semua pakai forEach.
+        const buah = ['apel', 'pisang', 'jeruk'];
+        buah.forEach((item) => {
+            console.log('Saya suka ' + item);
+        });
+        // Ada daftar harga barang, kalikan semua harga dengan 10% pakai map.
+        const barang = ["HP", "laptop", "PC", "PAD"];
+        let naikHarga = barang.map(function(e){
+            return e * 1.1;
+        });
+        console.log(naikHarga);
+        // Ada daftar umur orang, ambil yang umurnya lebih dari 17 pakai filter.
+        const umur = [7, 9, 12, 18, 22, 30];
+        let dewasa = umur.filter(function(f){
+            return f > 17;
+        })
+        console.log(dewasa);
+        // Ada daftar nilai ujian, jumlahkan semua nilai pakai reduce.
+        const nilai = [80, 90, 75, 85, 95];
+        const jumlahnilai = nilai.reduce(function(total, g){
+            return total + g;
+        })
+        console.log(jumlahnilai);
+        // Ada daftar nomor kursi, cari kursi pertama yang lebih dari nomor 20 pakai find.
+        const nomerKursi = [7, 9, 13, 15, 17, 21, 26, 28];
+        const kursi = nomerKursi.find(function(h){
+            return h > 20;
+        });
+        console.log(kursi);
+
+    </script>
+</body>
+</html>

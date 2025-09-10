@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. buat array berisi 5 nama temanmu
+        let nama = ["dien", "yamin", "lexy", "irgi", "ucup"];
+        // tambahkan 1 nama di depan dan di belakang
+        nama.unshift("jaisy");
+        nama.push("lutfi");
+        // hapus 1 nama dari depan dan belakang
+        nama.shift();
+        nama.pop();
+        // selipin nama baru di posisi ke2
+        nama.splice(1, 0, "zaki");
+        // hitung berapa jumlah teman sekarang pakai length
+        console.log(nama.length);
+
+        // Kamu punya array buah, tambah 2 buah baru di depan dan belakang.
+        let buah = ["buah naga", "durian"];
+        buah.unshift("strawbery");
+        buah.push("mangga");
+        // Kamu bikin array daftar belanja, masukin barang baru yang baru aja kamu ingat.
+        let daftarBelanja = ["popok"]
+        daftarBelanja.push("susu");
+        daftarBelanja.unshift("madu");
+        // Kamu punya berbagai hewan peliharaan, tambah hewan baru di depan.
+        let hewanPeliharaan = ["kucin", "anjing", "burung"];
+        hewanPeliharaan.push("hamster");
+        hewanPeliharaan.unshift("kelinci");
+        // Kamu punya berbagai film favorit, tambahin film terbaru.
+        let filmFav = ["marvel"];
+        filmFav.push("disney");
+        filmFav.unshift("universal");
+        // Kamu punya array angka, masukin angka 0 di awal.
+        let angka = [ 1, 2, 3, 4, 5, 6];
+        angka.unshift(0);
+
+        console.table(buah);
+        console.table(daftarBelanja);
+        console.table(hewanPeliharaan);
+        console.table(filmFav);
+        console.table(angka);
+
+        // Kamu punya berbagai mainan, buang mainan terakhir karena rusak.
+        let mainan = ["lego", "catur", "bola", "hotwheels"];
+        mainan.pop();
+        // Kamu punya banyak baju, buang baju paling depan karena kotor.
+        let baju = ["kemeja", "jaket", "koko"];
+        baju.shift();
+        // Kamu punya susunan makanan, makan makanan terakhir (hapus terakhir).
+        let makanan = ["batagor", "cireng", "baso"];
+        makanan.pop();
+        // Kamu punya berbagai tugas sekolah, hapus tugas pertama karena sudah selesai.
+        let tugasSekolah = ["pr mtk", "pr b.inggris"];
+        tugasSekolah.shift();
+        // Kamu punya berbagai daftar antrian, hapus orang pertama (udah dilayani).
+        let daftarAntrian = ["p-123", "p-124"];
+        daftarAntrian.shift();
+
+        // Hitung jumlah buah di array.
+        let buah1 = ["buah naga", "durian"];
+        console.log(buah1.length);
+        // Hitung jumlah teman di array.
+        let teman = ["dien", "yamin", "lexy", "irgi", "ucup"];
+        console.log(teman.length);
+        // Hitung jumlah angka di array.
+        let angka1 = [ 1, 2, 3, 4, 5, 6];
+        console.log(angka1.length);
+        // Hitung jumlah barang di daftar belanja.
+        let Belanja = ["popok"]
+        console.log(Belanja.length);
+        // Hitung jumlah hewan di array.
+        let hewan = ["kuda", "singa"]
+        console.log(hewan.length);
+
+        // Kamu punya susunan warna ["merah", "kuning", "hijau"], sisipkan "biru" di posisi ke-2.
+        let warna = ["merah", "kuning", "hijau"];
+        warna.splice()
+        // Kamu punya array teman, hapus teman di posisi ke-3.
+        let kawan = ["dien", "yamin", "lexy", "irgi", "ucup"];
+        kawan.splice()
+        // Kamu punya array angka [1,2,3,4,5], hapus angka 3 dan ganti dengan 30.
+        let nomer = [1,2,3,4,5];
+        nomer.splice()
+        // Kamu punya susunan makanan, tambah makanan baru di tengah.
+         let jajanan = ["batagor", "cireng", "baso"];
+         jajanan.splice()
+        // Kamu punya array benda ["buku", "pensil", "penghapus"], ganti "pensil" jadi "pulpen".
+        let benda = ["buku", "pensil", "penghapus"];
+        benda.splice()
+
+        // Buat susunan daftar belanja, tambah barang, hapus barang, terus hitung jumlah barang.
+        let belanjaan = ["telur", "susu", "keju", "sayuran", "sauce"];
+        belanjaan.push("kecap");
+        console.log(belanjaan.length)
+        // Buat susunan hewan peliharaan, masukin hewan baru, hapus hewan lama, lalu selipin hewan baru di tengah.
+        let peliharaan = ["kura-kura","kuda","ular"]
+        peliharaan.splice(1, 0, "kalajengking");
+        // Buat angka array, tambah angka baru di akhir, buang angka awal, lalu cek jumlah.
+        let angka2 = [1, 2, 3, 4, 5, 6]
+        angka2.push(7);
+        angka2.shift();
+        console.log(angka2.length);
+        // Buat array teman, tambahin teman baru di awal, hapus teman terakhir, lalu ganti teman ke-2 pakai nama lain.
+        let friends = ["edward", "lower", "calvin"]
+        friends.unshift("elon");
+        friends.pop();
+        friends.splice(2, 0, "albert")
+        // Buat susunan makanan, tambah makanan, hapus makanan, masukkan makanan, terus tampilkan semua.
+        let eat = ["spageti"]
+        eat.push("baso");
+        eat.shift();
+        eat.splice(1, 0, "cireng", "papeda");
+        
+
+             
+    </script>
+</body>
+</html>
