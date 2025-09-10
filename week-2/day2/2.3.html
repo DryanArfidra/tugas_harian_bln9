@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Buat object mobil dengan properti merk dan warna. Tampilkan merk.
+    const mobil = {
+        merek: "Toyota",
+        warna: "hitam"
+    };
+    console.log(mobil.merek);
+    // Buat object siswa dengan properti nama dan kelas. Tampilkan kelas.
+     const siswa = {
+        nama: "Dryanz",
+        kelas: "x",
+    };
+    console.log(siswa.kelas);
+    // Buat object hewan dengan properti jenis dan umur. Tampilkan jenis.
+    const hewan = {
+        jenis: "kuda",
+        umur: 3,
+    };
+    console.log(hewan.jenis);
+    // Buat object film dengan properti judul dan tahun. Tampilkan tahun.
+    const film = {
+        judul: "laskar pelangi",
+        tahun: 2016,
+    };
+    console.log(film.tahun);
+    // Buat object akun dengan properti username dan password. Tampilkan username.
+    const akun = {
+        userName: "Dryanz",
+        password: "1234",
+    };
+    console.log(akun.userName);
+
+    // Tambahkan properti harga pada object mobil.
+    mobil.harga = "Rp 2.000.000.000";
+    // Tambahkan properti alamat pada object siswa.
+    siswa.alamat = "jl.padasuka";
+    // Tambahkan properti makanan pada object hewan.
+    hewan.makanan = "rumput";
+    // Tambahkan properti genre pada object film.
+    film.genre = "horor";
+    // Tambahkan properti email pada object akun.
+    akun.email = "Dryan@gmail.com"
+
+    // Ubah warna mobil jadi "hitam".
+    mobil.warna = "hitam ";
+    // Ubah kelas siswa jadi "XI".
+    siswa.kelas = "XI"
+    // Ubah umur hewan jadi 5.
+    hewan.umur = 5
+    // Ubah tahun film jadi 2024.
+    film.tahun = 2024
+    // Ubah password akun jadi "rahasia123"
+    akun.password = "rahasia123"
+
+    // Hapus harga dari mobil.
+    delete mobil.harga;
+    // Hapus alamat dari siswa.
+    delete siswa.alamat;
+    // Hapus makanan dari hewan.
+    delete hewan.makanan;
+    // Hapus genre dari film.
+    delete film.genre;
+    // Hapus email dari akun.
+    delete akun.email;
+
+    // Loop semua isi mobil.
+    for ( let data in mobil){
+        console.log(data)
+    }
+    // Loop semua isi siswa.
+    for ( let data in siswa){
+        console.log(data)
+    }
+    // Loop semua isi hewan.
+    for ( let data in hewan){
+        console.log(data)
+    }
+    // Loop semua isi film.
+    for ( let data in film){
+        console.log(data)
+    }
+    // Loop semua isi akun.
+    for ( let data in akun){
+        console.log(data)
+    }
+
+// Buat object buku dengan properti: judul, pengarang, tahunTerbit.
+    const buku = {
+        judul: "daun",
+        pengarang: "deden",
+        tahunPenerbit: 2020
+    }
+// Tambahkan properti penerbit.
+    buku.penerbit = "mizan"
+// Ubah nilai tahunTerbit.
+    buku.tahunPenerbit = 2025;
+// Hapus pengarang.
+    delete buku.pengarang;
+// Tampilkan semua isi object dengan looping.
+    for (let data in buku){
+        console.log(data)
+    }
+
+    // Menyimpan judul, pengarang, tahunTerbit.
+    const bukuFav = {
+        judul: "matahri",
+        pengarang: "supratman",
+        tahunPenerbit: 2020
+    }
+    // Menambah properti penerbit.
+    bukuFav.penerbit = "mizan"
+    // Mengubah tahunTerbit.
+    bukuFav.tahunPenerbit = 2025;
+    // Menghapus pengarang.
+    delete bukuFav.pengarang;
+    // Menampilkan semua isi object.
+     for (let data in bukuFav){
+        console.log(data)
+    }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const array = ["apel", "jeruk", "MANGGA", "pisang", "ANGGUR"];
+
+// console.log(array[0]); // apel
+// console.log(array[2]); // mangga
+// console.log(array[4]); // anggur
+
+array.forEach(element => {  // forEach
+    console.log(element);
+});
+
+const newArray = array.map(element => {  
+    return element.toLowerCase(); // LOWERCASE buat kecil semua, UPPERCASE buat besar semua
+})
+
+console.log(newArray); // map
+
+
+const angka = [1, 2, 3, 4, 5];
+
+const newAngka = angka.reduce(function(acc, curr){
+    return acc + curr;
+}, 0);
+console.log(newAngka); // reduce
+
+
+const findAngka = [1,3,5,6,200,8,89,90,21,2,4,44,55];
+
+const newFindAngka = findAngka.find(function(element){
+    return element > 10; // 200
+});
+
+console.log(newFindAngka); // find
+
+const filterAngka = findAngka.filter(element => {
+    return element > 80; // [200,89,90,21,44,55]
+});
+
+console.log(filterAngka); // filter
+    </script>
+</body>
+</html>
