@@ -6,6 +6,46 @@
 </head>
 <body>
     <script>
+        const dataDiri = {
+    nama : "Masdanz",
+    umur : 20,
+    hobi : ["membaca", "menulis", "bermain game"],
+    alamat : {
+        jalan : "Jl. Mawar",
+        kota : "Bandung",
+        provinsi : "Jawa Barat"
+    }
+}
+
+console.log(dataDiri); // Masdanz
+console.log(dataDiri["nama"]); // Masdanz
+console.log(dataDiri.umur); // 20
+console.log(dataDiri.hobi[1]); // menulis
+console.log(dataDiri.alamat.kota); // Bandung
+console.log(dataDiri.alamat.jalan); // JL. Mawar
+console.log(dataDiri.alamat.provinsi); // Jawa Barat
+
+
+dataDiri.jenisKelamin = "Laki-laki"; // menambahkan properti baru
+console.log(dataDiri.jenisKelamin); // Laki-laki
+
+dataDiri.hobi.push("ngoding")
+
+console.log(dataDiri.hobi)
+
+dataDiri.umur = 19
+dataDiri.alamat.kota = "yogyakarta"
+
+console.log(dataDiri.umur)
+console.log(dataDiri.alamat.kota)
+
+console.log(dataDiri)
+delete dataDiri.jenisKelamin
+console.log(dataDiri)
+
+for (let data in dataDiri) {
+    console.log(data + " : " + dataDiri[data])
+}
         const array = ["apel", "jeruk", "MANGGA", "pisang", "ANGGUR"];
 
 // console.log(array[0]); // apel
@@ -44,6 +84,30 @@ const filterAngka = findAngka.filter(element => {
 });
 
 console.log(filterAngka); // filter
+
+
+const buah1 = ["apel", "mangga", "semangka", "pisang",]
+const buah2 = ["appel", "manggo", "watermelon", "banana"]
+
+const [ , ,tiga, empat, lima] = buah1
+
+console.log(lima)
+
+const data = {nama: "masdanz", umur: "19"}
+
+const {nama, umur} = data
+console.log(nama)
+
+let gabung = buah1 + buah2
+const spread = [...buah1, ...buah2]
+console.log(gabung)
+console.log(spread)
+
+function rest(...param) {
+    console.log(param)
+}
+
+rest(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     </script>
 </body>
 </html>

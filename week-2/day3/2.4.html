@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Ambil nilai dari array [10, 20, 30]jadi variabel x, y, z.
+        let angka = [10, 20, 30 ];
+        let [x, y, z] = angka;
+        console.log(x, y, z);
+        // Ambil nilai pertama dan kedua dari array ["apel", "jeruk", "mangga"] 
+        let buah = ["apel", "jeruk", "mangga"];
+        let [a, b, c] = buah;   
+        console.log(a, b);
+        // Ambil nilai pertama dan sisanya dari array [5, 6, 7, 8] 
+        let [pertama, ...sisanya] = [5, 6, 7, 8];
+        console.log(pertama);
+        console.log(sisanya);
+        // penghancur array [100, 200] menjadi satu dan dua
+        let [satu, dua] = [100, 200];
+        console.log(satu, dua);
+        // destructuring array [true, false, true] jadi t1, t2, t3
+        let [t1, t2, t3] = [true, false, true];
+        console.log(t1, t2, t3);
+
+
+    </script>
+</body>
+</html>
