@@ -24,7 +24,57 @@
         let [t1, t2, t3] = [true, false, true];
         console.log(t1, t2, t3);
 
+        // Destrukturisasi objek { nama: "Budi", umur: 17 }.
+        let biodata = { nama : "Budi", umur: 17 };
+        let { nama, umur } = biodata;
+        console.log(nama, umur);
+        // Ambil judul dan pengarang dari object { judul: "Buku A", pengarang: "Andi" }.
+        let buku = {judul: "buke", pengarang: "andi"};
+        let {judul, pengarang} = buku;
+        console.log(judul, );
+        console.log(pengarang);
+        // Ambil merek dari object { merk: "Honda", warna: "merah" }.
+        let  mobil = { merek: "honda", warna: "merah"};
+        let { merek, warna} = mobil;
+        console.log(merek);
+        console.log(warna);
+        // Destrukturisasi { username: "danz", password: "123" }.
+        let login = {username: "danz", password: "123"};
+        let {username, password} = login;
+        console.log(username, password);
+        // Ambil nama dan kelas dari { nama: "Siti", kelas: "XI" }.
+        let siswa = { nama1: "siti", kelas: "XI"};
+        let {nama1, kelas} = siswa;
+        console.log(nama1, kelas); 
 
+        // Gabungkan [1, 2]dengan [3, 4].
+        let arr1 = [1, 2];
+        let arr2 = [3, 4];
+        let gabung = [...arr1, ...arr2];
+
+        console.log(gabung);
+        // Copy array [10, 20, 30]ke array baru.
+        let oldArray = [10, 20, 30];
+        let newArray = [...oldArray];
+        console.log(newArray);
+        // Gabungkan object { a: 1 }dengan { b: 2 }.
+        let object1 = { a:1 };
+        let object2 = { b:2 };
+        let gabungObject = {...object1, ...object2};
+        // Spread array [5, 6, 7]ke console.log.
+        let array = [5, 6, 7];
+        console.log(...array);
+        // Gabungkan array ["a", "b"]dan ["c", "d"].
+        let array1 = ["a", "b"];
+        let array2 = ["c", "d"];
+        let gabungArray = [...array1, ...array2];
+
+        // Buat function tambah yang bisa nerima banyak angka.
+        
+        // Buat function cetak yang nerima banyak string dan print satu-satu.
+        // Buat function kalikan semua angka yang masuk.
+        // Buat function gabungKalimat yang nerima banyak kata jadi 1 kalimat.
+        // Buat destructuring array [1,2,3,4,5] jadi awal dan ...sisa.
     </script>
 </body>
 </html>
