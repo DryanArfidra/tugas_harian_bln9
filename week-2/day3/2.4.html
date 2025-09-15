@@ -70,11 +70,65 @@
         let gabungArray = [...array1, ...array2];
 
         // Buat function tambah yang bisa nerima banyak angka.
-        
+        function jumlah(...angka) {
+            return angka.reduce((total, n) => total + n, 0);
+        }
+        console.log(jumlah(10, 20, 30, 40));
         // Buat function cetak yang nerima banyak string dan print satu-satu.
+        function cetak(...string) {
+            return string.forEach(item => {console.log(item)});
+        }
+        cetak("dimas", "main", "bola");
         // Buat function kalikan semua angka yang masuk.
+        function kali(... angka) {
+            return angka.reduce((total, n) => total * n);
+        }
+        console.log(kali(15, 20, 25, 30));
         // Buat function gabungKalimat yang nerima banyak kata jadi 1 kalimat.
+        function gabungKalimat(...kalimat) {
+            return kalimat.reduce((kalimat1, kalimat2) => `${kalimat1} ${kalimat2}`);
+        }
+        console.log(gabungKalimat("hallo perkenalkan nama saya", "Dryan Arfidra"));
         // Buat destructuring array [1,2,3,4,5] jadi awal dan ...sisa.
+        let [awal, ...sisa] = [1, 2, 3, 4, 5];
+        console.log(awal);
+        console.log(sisa)
+
+        // Gunakan destrukturisasi array untuk mengambil nilai [1, 2, 3, 4].
+        let angka3 = [1, 2, 3, 4];
+        console.log(angka3); 
+        // Membuat objek mobil dan merusak merek dan tahun.
+        let mobil2 = { merek1: "Toyota", tahun: 2020 };
+        let { merek1, tahun } = mobil;
+
+        console.log(merek); 
+        console.log(tahun); 
+        // Gabungkan dua array pakai operator spread.
+        let ab = ["saya adalah"]
+        let cd = ["seorang progammer"]
+        let gabungABCD = [...ab, ...cd]
+
+        console.log(gabungABCD);
+        // Buat fungsi yang nerima banyak angka lalu jumlahkan pakai rest.
+        function jumlah(...angka) {
+        return angka.reduce((total, n) => total + n, 0);
+        }
+
+        console.log(jumlah(1, 2, 3, 4)); 
+
+        // Objek { nama: "Dewi", umur: 16, kelas: "XI" }.
+        let pelajar = { nama5: "Dewi", umur1: 16, kelas1: "XI" }
+        // Pisahkan nama dan kelas dengan destrukturisasi.
+        let {nama5, umur1, kelas1} = pelajar
+        // Tambahkan properti baru hobi pakai spread.
+        let hobi = {hoby: "berenang"}
+        // Buat fungsi yang menerima nilai ujian (banyak angka) lalu hitung totalnya dengan istirahat.
+        function hitungNilai(nilai) {
+            return nilai.reduce((total, n) => total+n, 0);
+        }
+        console.log(hitungNilai(80, 90, 75, 85, 65))
+        // Tampilkan hasil akhir ke konsol.
+        console.log(pelajar);
     </script>
 </body>
 </html>
