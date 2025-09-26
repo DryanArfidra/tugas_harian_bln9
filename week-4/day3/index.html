@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+    <h2>input dan tampilkan userName</h2>
+    <input type="text" id="usernameInput" placeholder="masukan userName">
+    <button onclick="saveUsername()">simpan</button>
+    <button onclick="showUsername()">tampilkan username</button>
+    <p id="diplayUser"></p>
+    </section>
+    
+    <h2>form login dan logout</h2>
+    <form onsubmit="login(event)">
+    <input type="text" id="loginUser" placeholder="userName" required>
+    <input type="password" id="loginPass" placeholder="password" required>
+    <button type="submit">login</button>
+    </form>
+
+  <section>
+    <h2>10. Counter</h2>
+    <p id="counter"></p>
+    <button onclick="increment()">Tambah</button>
+  </section>
+
+  <section>
+    <h2>11-12. Pilihan Tema</h2>
+    <select id="themeSelect" onchange="setTheme()">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+    <p>Reload halaman untuk melihat tema tersimpan.</p>
+  </section>
+
+  <section>
+    <h2>13-15. Daftar Belanja</h2>
+    <input type="text" id="itemInput" placeholder="Tambah barang">
+    <button onclick="addItem()">Tambah</button>
+    <button onclick="clearAll()">Clear All</button>
+    <ul id="list"></ul>
+  </section>
+
+  <section>
+    <h2>16-17. Form Biodata</h2>
+    <form onsubmit="saveBiodata(event)">
+      <input type="text" id="bioName" placeholder="Nama" required>
+      <input type="number" id="bioAge" placeholder="Umur" required>
+      <input type="email" id="bioEmail" placeholder="Email" required>
+      <button type="submit">Simpan</button>
+    </form>
+    <p id="bioDisplay"></p>
+  </section>
+
+  <section>
+    <h2>18-19. Cek & Ganti Username</h2>
+    <form onsubmit="checkUser(event)">
+      <input type="text" id="newUser" placeholder="Username" required>
+      <button type="submit">Submit</button>
+    </form>
+    <input type="text" id="changeUser" placeholder="Username baru">
+    <button onclick="changeUsername()">Ganti</button>
+  </section>
+
+  <section>
+    <h2>20. Login Remember Me</h2>
+    <form onsubmit="rememberLogin(event)">
+      <input type="text" id="remUser" placeholder="Username" required>
+      <input type="password" id="remPass" placeholder="Password" required>
+      <label><input type="checkbox" id="remember"> Remember Me</label>
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

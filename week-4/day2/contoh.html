@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Validasi Form</title>
+</head>
+<body>
+  <h1>Latihan Validasi Form HTML & JavaScript</h1>
+
+  <h2>B. Validasi dengan HTML (Atribut Bawaan)</h2>
+  <form>
+    Nama: <input type="text" required><br><br>
+
+    Usia: <input type="number" required><br><br>
+
+    Password: <input type="password" required><br><br>
+
+    Email: <input type="email" required><br><br>
+
+    Telepon: <input type="text" pattern="[0-9]{10,12}" required><br><br>
+
+    Username: <input type="text" pattern="[a-z]+" required><br><br>
+
+    Kode Pos: <input type="text" pattern="[0-9]{5}" required><br><br>
+
+    Tanggal Lahir: <input type="date" max="2019-12-31" required><br><br>
+
+    Website: <input type="url" required><br><br>
+
+    Angka Genap: <input type="text" pattern="(0|2|4|6|8)$" required><br><br>
+
+    <button type="submit">Kirim HTML Form</button>
+  </form>
+
+  <hr>
+
+  <h2>C. Validasi dengan JavaScript</h2>
+  <form id="formJS">
+    Nama: <input type="text" id="nama"><br><br>
+    Usia: <input type="number" id="usia"><br><br>
+    Password: <input type="password" id="password"><br><br>
+    Confirm Password: <input type="password" id="confirm"><br><br>
+    Email: <input type="text" id="email"><br><br>
+    Nomor HP: <input type="text" id="hp"><br><br>
+    Username: <input type="text" id="username"><br><br>
+    Tanggal: <input type="date" id="tanggal"><br><br>
+    Komentar: <textarea id="komentar"></textarea><br><br>
+    Pilihan:
+    <select id="pilihan">
+      <option value="">--pilih--</option>
+      <option value="A">Opsi A</option>
+      <option value="B">Opsi B</option>
+    </select><br><br>
+    Upload File: <input type="file" id="file"><br><br>
+    Setuju: <input type="checkbox" id="setuju"><br><br>
+    Angka Genap: <input type="number" id="angka"><br><br>
+    <button type="submit">Kirim JS Form</button>
+  </form>
+
+  <script>
+    document.getElementById("formJS").addEventListener("submit", function(event) {
+
+      let nama = document.getElementById("nama").value;
+      let usia = document.getElementById("usia").value;
+      let password = document.getElementById("password").value;
+      let confirm = document.getElementById("confirm").value;
+      let email = document.getElementById("email").value;
+      let hp = document.getElementById("hp").value;
+      let username = document.getElementById("username").value;
+      let tanggal = document.getElementById("tanggal").value;
+      let komentar = document.getElementById("komentar").value;
+      let pilihan = document.getElementById("pilihan").value;
+      let fileInput = document.getElementById("file").value;
+      let setuju = document.getElementById("setuju").checked;
+      let angka = document.getElementById("angka").value;
+
+      if (nama === "") return alert("Nama wajib diisi");
+
+      if (usia < 18) return alert("Usia minimal 18");
+
+      if (password !== confirm) return alert("Password tidak sama");
+
+      let regexEmail = /^[\w.-]+@[\w.-]+\.\w{2,}$/;
+      if (!regexEmail.test(email)) return alert("Email tidak valid");
+
+      if (isNaN(hp)) return alert("Nomor HP harus angka");
+
+      let regexUser = /^[a-zA-Z0-9]{5,}$/;
+      if (!regexUser.test(username)) return alert("Username minimal 5 karakter, hanya huruf/angka");
+
+      if (new Date(tanggal) > new Date()) return alert("Tanggal tidak boleh lebih dari hari ini");
+
+      if (komentar.length > 200) return alert("Komentar maksimal 200 karakter");
+
+      if (pilihan === "") return alert("Pilih salah satu opsi");
+
+      if (!(fileInput.endsWith(".jpg") || fileInput.endsWith(".png"))) return alert("File harus .jpg atau .png");
+
+      if (!setuju) return alert("Harus menyetujui");
+
+      if (angka % 2 !== 0) return alert("Harus angka genap");
+
+      alert("✅ Sukses! Semua validasi terpenuhi");
+    });
+  </script>
+</body>
+</html>

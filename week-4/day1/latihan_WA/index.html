@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>15 Soal Event Sederhana</title>
+</head>
+<body>
+
+<h1>15 Soal Event (Sederhana)</h1>
+
+<h2>A. Inline Event</h2>
+<button onclick="alert('Halo!')">Klik Aku</button><br><br>
+
+<img src="https://via.placeholder.com/100?text=Awal"
+     onclick="this.src='https://via.placeholder.com/100?text=Lain'"><br><br>
+
+<p ondblclick="this.innerText='Double clicked!'">Double klik saya</p>
+
+<input type="text" placeholder="Isi..." 
+       onfocus="this.placeholder='Tulis di sini...'"><br><br>
+
+<button onmousedown="this.innerText='Down'"
+        onmouseup="this.innerText='Up'">
+  Klik & tahan
+</button>
+
+<h2>B. Assign Event Properties</h2>
+<p id="msg">Pesan awal</p>
+<button id="btn">Klik</button><br><br>
+
+<div id="area" style="width:100px;height:50px;background:lightgray;"></div><br>
+
+<input id="inp" type="text"><span id="show"></span><br><br>
+
+<button id="btn2">Klik sekali</button><br><br>
+
+<button id="btn3">Coba Klik</button>
+
+<h2>C. addEventListener()</h2>
+<button id="btn4">Klik aku</button><br><br>
+
+<button id="btn5">Klik</button>
+<button id="remove">Remove Handler</button><br><br>
+
+<form id="myForm">
+  <input type="text" id="nama" placeholder="Nama">
+  <button type="submit">Kirim</button>
+</form><br>
+
+<ul id="list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul><br>
+
+<button id="btn6">Klik sekali aja</button>
+
+<script>
+document.getElementById("btn").onclick = function() {
+  document.getElementById("msg").innerText = "Teks berubah!";
+};
+
+let area = document.getElementById("area");
+area.onmouseover = function() { area.style.background = "yellow"; };
+area.onmouseout  = function() { area.style.background = "lightgray"; };
+
+document.getElementById("inp").oninput = function() {
+  document.getElementById("show").innerText = this.value;
+};
+
+let b2 = document.getElementById("btn2");
+b2.onclick = function() {
+  b2.disabled = true;
+  b2.innerText = "Sudah diklik!";
+};
+
+let b3 = document.getElementById("btn3");
+b3.onclick = function() { alert("Handler pertama"); };
+b3.onclick = function() { alert("Handler kedua"); }; // menimpa
+
+let b4 = document.getElementById("btn4");
+b4.addEventListener("click", () => b4.style.background = "pink");
+b4.addEventListener("click", () => console.log("Tombol diklik!"));
+
+let b5 = document.getElementById("btn5");
+function ubahWarna() { b5.style.background = "yellow"; }
+b5.addEventListener("click", ubahWarna);
+document.getElementById("remove").addEventListener("click", () => {
+  b5.removeEventListener("click", ubahWarna);
+});
+
+document.getElementById("myForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  console.log("Input:", document.getElementById("nama").value);
+});
+
+document.getElementById("list").addEventListener("click", function(e){
+  if(e.target.tagName === "LI"){
+    e.target.innerText = "Saya diklik!";
+  }
+});
+
+document.getElementById("btn6")
+  .addEventListener("click", () => alert("Hanya sekali!"), { once: true });
+</script>
+
+</body>
+</html>

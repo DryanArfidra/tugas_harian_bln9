@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan DOM & Event Handling</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(45deg, #FF512F, #DD2476);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 10px;
+            background: #f8f9fa;
+            border-left: 5px solid #6a11cb;
+        }
+        
+        h2 {
+            color: #6a11cb;
+            margin-top: 0;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        
+        .task {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .task h3 {
+            margin-top: 0;
+            color: #2575fc;
+        }
+        
+        .elements-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .box:hover {
+            transform: scale(1.05);
+        }
+        
+        .red { background-color: #ff6b6b; }
+        .blue { background-color: #4d96ff; }
+        .green { background-color: #6bcb77; }
+        .yellow { background-color: #ffd93d; }
+        
+        button {
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        input, select {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 300px;
+            margin: 5px 0;
+        }
+        
+        .output {
+            background: #e9f7fe;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: translateX(200%);
+            transition: transform 0.5s ease;
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification.error {
+            background: #e74c3c;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Latihan DOM & Event Handling</h1>
+            <p class="subtitle">Pelajari cara memilih, memanipulasi, dan menangani event pada elemen HTML</p>
+        </header>
+        
+        <div class="content">
+            <!-- DOM Selection Section -->
+            <section class="section">
+                <h2>1. DOM Selection</h2>
+                
+                <div class="task">
+                    <h3>Task 1: Pilih Elemen dengan ID</h3>
+                    <p>Gunakan <code>document.getElementById()</code> untuk memilih elemen dengan ID "output1" dan ubah teksnya.</p>
+                    <div class="output" id="output1">Teks ini akan berubah...</div>
+                    <button id="btnChangeText">Ubah Teks</button>
+                </div>
+                
+                <div class="task">
+                    <h3>Task 2: Pilih Elemen dengan Class</h3>
+                    <p>Gunakan <code>document.getElementsByClassName()</code> untuk memilih semua elemen dengan class "box" dan ubah warna latar belakangnya.</p>
+                    <div class="elements-container">
+                        <div class="box red">Box 1</div>
+                        <div class="box blue">Box 2</div>
+                        <div class="box green">Box 3</div>
+                        <div class="box yellow">Box 4</div>
+                    </div>
+                    <button id="btnChangeColor">Ubah Warna Box</button>
+                </div>
+                
+                <div class="task">
+                    <h3>Task 3: Pilih Elemen dengan Query Selector</h3>
+                    <p>Gunakan <code>document.querySelector()</code> untuk memilih elemen pertama dengan class "task" dan ubah border-nya.</p>
+                    <button id="btnChangeBorder">Ubah Border Task Pertama</button>
+                </div>
+            </section>
+            
+            <!-- DOM Manipulation Section -->
+            <section class="section">
+                <h2>2. DOM Manipulation</h2>
+                
+                <div class="task">
+                    <h3>Task 4: Manipulasi Konten</h3>
+                    <p>Ubah konten HTML dari elemen berikut menggunakan <code>innerHTML</code> atau <code>textContent</code>.</p>
+                    <div class="output" id="output2">Konten ini akan dimanipulasi...</div>
+                    <input type="text" id="newContent" placeholder="Masukkan konten baru">
+                    <button id="btnChangeContent">Ubah Konten</button>
+                </div>
+                
+                <div class="task">
+                    <h3>Task 5: Manipulasi Atribut</h3>
+                    <p>Ubah atribut <code>src</code> gambar berikut:</p>
+                    <img id="demoImage" src="https://picsum.photos/seed/dom1/200/150.jpg" alt="Demo Image" style="max-width: 200px; border-radius: 8px;">
+                    <div>
+                        <select id="imageSelect">
+                            <option value="https://picsum.photos/seed/dom1/200/150.jpg">Gambar 1</option>
+                            <option value="https://picsum.photos/seed/dom2/200/150.jpg">Gambar 2</option>
+                            <option value="https://picsum.photos/seed/dom3/200/150.jpg">Gambar 3</option>
+                        </select>
+                        <button id="btnChangeImage">Ubah Gambar</button>
+                    </div>
+                </div>
+                
+                <div class="task">
+                    <h3>Task 6: Tambah & Hapus Elemen</h3>
+                    <p>Tambahkan elemen baru ke dalam container berikut atau hapus elemen terakhir:</p>
+                    <div class="elements-container" id="dynamicContainer">
+                        <div class="box red">Item 1</div>
+                        <div class="box blue">Item 2</div>
+                    </div>
+                    <button id="btnAddElement">Tambah Elemen</button>
+                    <button id="btnRemoveElement">Hapus Elemen</button>
+                </div>
+            </section>
+            
+            <!-- Event Handling Section -->
+            <section class="section">
+                <h2>3. Event Handling</h2>
+                
+                <div class="task">
+                    <h3>Task 7: Event Click</h3>
+                    <p>Klik kotak-kotak berikut untuk mengubah warnanya:</p>
+                    <div class="elements-container">
+                        <div class="box clickable" data-color="red">Klik Saya</div>
+                        <div class="box clickable" data-color="blue">Klik Saya</div>
+                        <div class="box clickable" data-color="green">Klik Saya</div>
+                    </div>
+                </div>
+                
+                <div class="task">
+                    <h3>Task 8: Event Mouseover & Mouseout</h3>
+                    <p>Arahkan mouse ke tombol berikut untuk melihat efeknya:</p>
+                    <button id="hoverBtn">Arahkan Mouse ke Sini</button>
+                    <div class="output" id="hoverOutput">Status mouse: Tidak di atas tombol</div>
+                </div>
+                
+                <div class="task">
+                    <h3>Task 9: Event Keyboard</h3>
+                    <p>Ketik sesuatu di input berikut untuk melihat hasilnya:</p>
+                    <input type="text" id="keyboardInput" placeholder="Ketik sesuatu...">
+                    <div class="output" id="keyboardOutput">Teks yang diketik: </div>
+                </div>
+                
+                <div class="task">
+                    <h3>Task 10: Event Form</h3>
+                    <p>Isi form berikut dan lihat hasilnya saat submit:</p>
+                    <form id="demoForm">
+                        <input type="text" id="nameInput" placeholder="Nama Anda" required>
+                        <input type="email" id="emailInput" placeholder="Email Anda" required>
+                        <button type="submit">Submit Form</button>
+                    </form>
+                    <div class="output" id="formOutput">Hasil form akan muncul di sini...</div>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>Latihan DOM & Event Handling &copy; 2023 | Praktikkan keterampilan JavaScript Anda!</p>
+        </footer>
+    </div>
+    
+    <div class="notification" id="notification">Notifikasi</div>
+    
+    <script>
+        // Fungsi untuk menampilkan notifikasi
+        function showNotification(message, isError = false) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.className = isError ? 'notification error show' : 'notification show';
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // DOM Selection Tasks
+        // Task 1: getElementById
+        document.getElementById('btnChangeText').addEventListener('click', function() {
+            const output1 = document.getElementById('output1');
+            output1.textContent = 'Teks telah berhasil diubah menggunakan getElementById!';
+            showNotification('Task 1 selesai!');
+        });
+        
+        // Task 2: getElementsByClassName
+        document.getElementById('btnChangeColor').addEventListener('click', function() {
+            const boxes = document.getElementsByClassName('box');
+            for (let i = 0; i < boxes.length; i++) {
+                boxes[i].style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
+            }
+            showNotification('Warna box telah diubah!');
+        });
+        
+        // Task 3: querySelector
+        document.getElementById('btnChangeBorder').addEventListener('click', function() {
+            const firstTask = document.querySelector('.task');
+            firstTask.style.borderLeft = '5px solid #e74c3c';
+            showNotification('Border task pertama telah diubah!');
+        });
+        
+        // DOM Manipulation Tasks
+        // Task 4: Manipulasi Konten
+        document.getElementById('btnChangeContent').addEventListener('click', function() {
+            const newContent = document.getElementById('newContent').value;
+            const output2 = document.getElementById('output2');
+            
+            if (newContent.trim() === '') {
+                showNotification('Masukkan konten terlebih dahulu!', true);
+                return;
+            }
+            
+            output2.innerHTML = `<strong>${newContent}</strong>`;
+            showNotification('Konten berhasil diubah!');
+        });
+        
+        // Task 5: Manipulasi Atribut
+        document.getElementById('btnChangeImage').addEventListener('click', function() {
+            const imageSelect = document.getElementById('imageSelect');
+            const demoImage = document.getElementById('demoImage');
+            
+            demoImage.src = imageSelect.value;
+            showNotification('Gambar berhasil diubah!');
+        });
+        
+        // Task 6: Tambah & Hapus Elemen
+        document.getElementById('btnAddElement').addEventListener('click', function() {
+            const container = document.getElementById('dynamicContainer');
+            const newElement = document.createElement('div');
+            
+            const colors = ['red', 'blue', 'green', 'yellow'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            newElement.className = `box ${randomColor}`;
+            newElement.textContent = `Item ${container.children.length + 1}`;
+            
+            container.appendChild(newElement);
+            showNotification('Elemen baru berhasil ditambahkan!');
+        });
+        
+        document.getElementById('btnRemoveElement').addEventListener('click', function() {
+            const container = document.getElementById('dynamicContainer');
+            
+            if (container.children.length > 0) {
+                container.removeChild(container.lastElementChild);
+                showNotification('Elemen terakhir berhasil dihapus!');
+            } else {
+                showNotification('Tidak ada elemen yang bisa dihapus!', true);
+            }
+        });
+        
+        // Event Handling Tasks
+        // Task 7: Event Click
+        const clickableBoxes = document.querySelectorAll('.clickable');
+        clickableBoxes.forEach(box => {
+            box.addEventListener('click', function() {
+                const color = this.getAttribute('data-color');
+                this.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
+                showNotification(`Box ${color} diklik!`);
+            });
+        });
+        
+        // Task 8: Event Mouseover & Mouseout
+        const hoverBtn = document.getElementById('hoverBtn');
+        const hoverOutput = document.getElementById('hoverOutput');
+        
+        hoverBtn.addEventListener('mouseover', function() {
+            hoverOutput.textContent = 'Status mouse: Di atas tombol!';
+            this.style.background = 'linear-gradient(45deg, #e74c3c, #c0392b)';
+        });
+        
+        hoverBtn.addEventListener('mouseout', function() {
+            hoverOutput.textContent = 'Status mouse: Tidak di atas tombol';
+            this.style.background = 'linear-gradient(45deg, #6a11cb, #2575fc)';
+        });
+        
+        // Task 9: Event Keyboard
+        const keyboardInput = document.getElementById('keyboardInput');
+        const keyboardOutput = document.getElementById('keyboardOutput');
+        
+        keyboardInput.addEventListener('keyup', function() {
+            keyboardOutput.textContent = `Teks yang diketik: ${this.value}`;
+        });
+        
+        // Task 10: Event Form
+        const demoForm = document.getElementById('demoForm');
+        const formOutput = document.getElementById('formOutput');
+        
+        demoForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('nameInput').value;
+            const email = document.getElementById('emailInput').value;
+            
+            formOutput.innerHTML = `
+                <strong>Form berhasil disubmit!</strong><br>
+                Nama: ${name}<br>
+                Email: ${email}
+            `;
+            
+            showNotification('Form berhasil disubmit!');
+        });
+    </script>
+</body>
+</html>
