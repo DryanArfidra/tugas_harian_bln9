@@ -1,0 +1,241 @@
+/* Reset dan styling dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0a1929 0%, #1a2332 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    color: #ffffff;
+}
+
+/* Judul utama */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+/* Container untuk input dan button */
+.todo-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Input field styling */
+#todoInput {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 16px;
+    border: 2px solid #2a3f5f;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+#todoInput::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#todoInput:focus {
+    outline: none;
+    border-color: #d4af37;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Button styling */
+button {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 100%);
+    color: #0a1929;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+    background: linear-gradient(135deg, #e5c354 0%, #f9f0d8 100%);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Todo list container */
+#todoList {
+    list-style: none;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Todo item styling */
+#todoList li {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#todoList li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(180deg, #d4af37, #f4e4bc);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+#todoList li:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateX(5px);
+}
+
+#todoList li:hover::before {
+    transform: scaleY(1);
+}
+
+/* Todo text */
+#todoList li span {
+    flex: 1;
+    font-size: 16px;
+    color: #ffffff;
+    margin-right: 15px;
+    word-wrap: break-word;
+}
+
+/* Delete button */
+.delete-btn {
+    background: linear-gradient(135deg, #8b0000 0%, #dc143c 100%);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(220, 20, 60, 0.3);
+}
+
+.delete-btn:hover {
+    background: linear-gradient(135deg, #dc143c 0%, #ff1744 100%);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(220, 20, 60, 0.5);
+}
+
+/* Animasi untuk item baru */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#todoList li {
+    animation: slideIn 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .todo-container {
+        flex-direction: column;
+    }
+    
+    #todoInput {
+        width: 100%;
+    }
+    
+    button {
+        width: 100%;
+    }
+    
+    #todoList li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .delete-btn {
+        align-self: flex-end;
+    }
+}
+
+/* Efek glassmorphism tambahan */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #d4af37, #f4e4bc);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #e5c354, #f9f0d8);
+}

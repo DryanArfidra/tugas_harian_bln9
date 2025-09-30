@@ -6,11 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>latiahan no 1</h2>
-    <form>
-        <label>Email</label>
-        <input type="email" required pattern=".+@.+">
-        <button type="submit">daftar</button>
-    </form>
+    <h2>latihan mandirir</h2>
+    <ul id="daftar">
+        <li>item a</li>
+        <li>item b</li>
+    </ul>
+    <button id="btn">click</button>
+    <script >
+        const btn = document.querySelector(`#btn`);
+        btn.classList.add(`besar`)
+        btn.setAttribute(`data-count`,`1`);
+        console.log(btn.databest.count);
+        btn.addEventListener(`click`, () => {
+            btn.textContent = `dklik!`;
+        })
+        
+    </script>
 </body>
 </html>

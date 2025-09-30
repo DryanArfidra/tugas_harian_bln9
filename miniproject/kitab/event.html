@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Mandiri JS</title>
+  <style>
+    #hoverBox {
+      width: 150px;
+      height: 100px;
+      background-color: lightblue;
+      text-align: center;
+      line-height: 100px;
+      border-radius: 10px;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <h2>Latihan Mandiri JavaScript</h2>
+
+  <!-- 1. Tombol ubah teks -->
+  <p id="paragraf">Ini teks awal paragraf.</p>
+  <button onclick="ubahTeks()">Ubah Paragraf</button>
+
+  <hr>
+
+  <!-- 2. Input dan tombol -->
+  <input type="text" id="teksInput" placeholder="Ketik sesuatu...">
+  <button onclick="tampilkanTeks()">Tampilkan</button>
+  <div id="output"></div>
+
+  <hr>
+
+  <!-- 3. Mouseover ubah warna -->
+  <div id="hoverBox">Arahkan kursor!</div>
+
+  <script>
+    // 1. Ubah teks paragraf
+    function ubahTeks() {
+      document.getElementById("paragraf").innerText = "Teks paragraf berhasil diubah!";
+    }
+
+    // 2. Tampilkan isi input ke div
+    function tampilkanTeks() {
+      const nilaiInput = document.getElementById("teksInput").value;
+      document.getElementById("output").innerText = nilaiInput;
+    }
+
+    // 3. Event mouseover untuk ubah warna
+    const box = document.getElementById("hoverBox");
+    box.addEventListener("mouseover", function () {
+      box.style.backgroundColor = "orange";
+    });
+    box.addEventListener("mouseout", function () {
+      box.style.backgroundColor = "lightblue";
+    });
+  </script>
+</body>
+</html>

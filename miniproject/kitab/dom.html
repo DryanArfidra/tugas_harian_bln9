@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>halo dunia</h1>
+    <p id="pesan">selamat datang 1</p>
+    <p id="pesan">selamat datang 2</p>
+    <p id="pesan">selamat datang 3</p>
+    <script>
+        let pertama = document.querySelector(".text")
+        console.log(pertama.innerText);
+        let semua = document.querySelectorAll(".text");
+        semua.forEach((el, i) => {
+            console.log(`elemen ke-${i+1}: ${el.innerText}`)
+        })
+
+        
+    </script>
+</body>
+</html>
